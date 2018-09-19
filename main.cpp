@@ -33,7 +33,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false), ipv4_proxy(NULL), ipv6_proxy(NULL) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Darkcoin-seeder\n"
+    static const char *help = "monetaryunit-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -357,19 +357,18 @@ extern "C" void* ThreadStats(void*) {
 }
 
 static const string mainnet_seeds[] = {
-  "bwkseed1.bulwarkcrypto.com:52543", 
-  "bwkseed2.bulwarkcrypto.com:52543", 
-  "bwkseed3.bulwarkcrypto.com:52543", 
-  "bwkseed4.bulwarkcrypto.com:52543", 
-  "bwkseed5.bulwarkcrypto.com:52543", 
-  "bwkseed1.bulwarkcrypto.site:52543", 
-  "bwkseed2.bulwarkcrypto.site:52543", 
-  "bwkseed3.bulwarkcrypto.site:52543", 
-  "bwkseed4.bulwarkcrypto.site:52543", 
-  "bwkseed5.bulwarkcrypto.site:52543", 
+  "dns1.monetaryunit.org:19683", 
+  "dns1.monetaryunit.org:19683", 
+  "dns1.monetaryunit.org:19683",
+  "192.99.217.102:19683",
+  "164.132.151.109:19683" 
   ""
 };
-static const string testnet_seeds[] = {"bulwark-test-node08.ssus.tech", "bulwark-test-node09.ssus.tech", ""};
+static const string testnet_seeds[] = {
+  "testnetdns.monetaryunit.org:19685", 
+  "144.202.61.237:19685",
+  ""
+};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
@@ -414,10 +413,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xb5;
-      pchMessageStart[1] = 0xd9;
-      pchMessageStart[2] = 0xf4;
-      pchMessageStart[3] = 0xa0;
+      pchMessageStart[0] = 0x47;
+      pchMessageStart[1] = 0x76;
+      pchMessageStart[2] = 0x65;
+      pchMessageStart[3] = 0xbd;
       seeds = testnet_seeds;
       fTestNet = true;
   }
