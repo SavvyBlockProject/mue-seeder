@@ -361,7 +361,7 @@ static const string mainnet_seeds[] = {
   "dns1.monetaryunit.org", 
   "dns1.monetaryunit.org",
   "192.99.217.102:19687",
-  "164.132.151.109:19687" 
+  "164.132.151.109:19687", 
   ""
 };
 static const string testnet_seeds[] = {
