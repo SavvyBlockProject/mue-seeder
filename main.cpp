@@ -357,15 +357,17 @@ extern "C" void* ThreadStats(void*) {
 }
 
 static const string mainnet_seeds[] = {
-  "dns1.monetaryunit.org", 
-  "dns1.monetaryunit.org", 
-  "dns1.monetaryunit.org",
-  "192.99.217.102:19687",
-  "164.132.151.109:19687", 
+  "node1.vsync.pw:65010", 
+  "node2.vsync.pw:65010", 
+  "node3.vsync.pw:65010", 
+  "node4.vsync.pw:65010", 
+  "node5.vsync.pw:65010", 
+  "node6.vsync.pw:65010", 
+  "node7.vsync.pw:65010", 
+  "node8.vsync.pw:65010", 
   ""
 };
 static const string testnet_seeds[] = {
-  "164.132.151.110:19685",
   ""
 };
 static const string *seeds = mainnet_seeds;
